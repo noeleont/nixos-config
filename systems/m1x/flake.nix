@@ -31,6 +31,7 @@
               nvim-pkg.overlays.default
             ];
           }
+          ../../modules/kanata.nix
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {

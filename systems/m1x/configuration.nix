@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system. Help is available in the configuration.nix(5) man page, on
-# https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
-
 {
   config,
   lib,
@@ -64,17 +60,6 @@
 
   programs.zsh.enable = true;
   time.timeZone = "Europe/Zurich";
-
-  services.kanata = {
-    enable = true;
-    keyboards = {
-      "internal".config = ''
-        (defsrc caps)
-        (deflayer base lctl)
-      '';
-    };
-  };
-  
 
   # Enable sound.
   # services.pulseaudio.enable = true;
