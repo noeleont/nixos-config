@@ -1,9 +1,9 @@
-{ pkgs, personal-config, ... }:
+{ pkgs, ... }:
 
 {
 
   imports = [
-    personal-config.lib.homeSettings
+          ../../modules/home.nix
   ];
 
   home.username = "noeleon";

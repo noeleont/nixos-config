@@ -7,7 +7,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nvim-pkg.url = "github:noeleont/nvim.nix";
-    personal-config.url = "github:noeleont/nix/25.05";
+    # personal-config.url = "github:noeleont/nix/25.05";
   };
 
   outputs =
@@ -16,7 +16,6 @@
       nixpkgs,
       home-manager,
       nvim-pkg,
-      personal-config,
       ...
     }: let
       system = "aarch64-linux";
@@ -35,11 +34,11 @@
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = false;
             home-manager.useUserPackages = true;
             home-manager.users.noeleon = import ./home.nix;
             home-manager.extraSpecialArgs = {
-              inherit personal-config;
+              inherit nvim-pkg;
             };
           }
         ];

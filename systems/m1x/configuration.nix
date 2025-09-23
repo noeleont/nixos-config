@@ -29,10 +29,14 @@
   services.openssh.enable = true;
   users.users.noeleon = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "uinput" "input" ];
+    extraGroups = [
+      "wheel"
+      "uinput"
+      "input"
+    ];
   };
   users.defaultUserShell = pkgs.zsh;
-  
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
@@ -49,9 +53,9 @@
     # Flakes clones its dependencies through the git command,
     # so git must be installed first
     git
-    vim
     ghostty
     firefox
+    nvim-pkg
   ];
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
