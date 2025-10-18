@@ -11,6 +11,11 @@
     ./hardware-configuration.nix
     # Include the necessary packages and configuration for Apple Silicon support.
     ../../support/apple-silicon-support
+    # Import shared modules
+    ../../modules/system/nix-settings.nix
+    ../../modules/system/services.nix
+    ../../modules/system/users.nix
+    ../../modules/system/locale.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
@@ -26,29 +31,10 @@
     settings.General.EnableNetworkConfiguration = true;
   };
   networking.nameservers = [ "1.1.1.1" ];
-  services.openssh.enable = true;
-  users.users.noeleon = {
-    isNormalUser = true;
-    extraGroups = [
-      "wheel"
-      "uinput"
-      "input"
-    ];
-  };
-  users.defaultUserShell = pkgs.zsh;
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.enable = true;
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
-  services.tailscale.enable = true;
-
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
   environment.systemPackages = with pkgs; [
     # Flakes clones its dependencies through the git command,
     # so git must be installed first
@@ -57,13 +43,6 @@
     firefox
     nvim-pkg
   ];
-
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
-  services.blueman.enable = true;
-
-  programs.zsh.enable = true;
-  time.timeZone = "Europe/Zurich";
 
   # Enable sound.
   # services.pulseaudio.enable = true;
