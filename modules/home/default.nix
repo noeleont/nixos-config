@@ -1,7 +1,10 @@
 { pkgs, ... }:
 {
   imports = [
-    ./home/firefox.nix
+    ./git.nix
+    ./firefox.nix
+    ./zed
+    ./packages.nix
   ];
 
   home = {
