@@ -14,10 +14,7 @@
   home.homeDirectory = "/home/noeleon";
 
   # System-specific packages for m1x
-  home.packages = with pkgs; [
-    firefox
-    chromium
-  ];
+  home.packages = with pkgs; [ ];
 
   programs.chromium = {
     enable = true;

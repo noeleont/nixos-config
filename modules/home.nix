@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
-  imports = [ ];
+  imports = [
+    ./home/firefox.nix
+  ];
 
   home = {
     stateVersion = "25.05";
