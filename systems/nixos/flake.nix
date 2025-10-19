@@ -47,6 +47,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.noeleon = import ./home.nix;
+            home-manager.extraSpecialArgs = {
+              inherit pkgs-unstable;
+            };
           }
         ];
         specialArgs = { inherit inputs; };

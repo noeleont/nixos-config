@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, pkgs-unstable, lib, ... }:
 
 {
 
@@ -30,6 +30,7 @@
 
   programs.zed-editor = {
     enable = true;
+    package = pkgs-unstable.zed-editor;
 
     extensions = [
       "nix"
