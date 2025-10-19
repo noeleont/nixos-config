@@ -1,13 +1,8 @@
 { pkgs, ... }:
 
 {
-
   imports = [
-    ../../modules/home.nix
-    ../../modules/home/shell.nix
-    ../../modules/home/git.nix
-    ../../modules/home/packages.nix
-    ../../modules/home/virtualization.nix
+    ../../modules/home
   ];
 
   home.username = "noeleon";
@@ -15,11 +10,4 @@
 
   # System-specific packages for m1x
   home.packages = with pkgs; [ ];
-
-  programs.chromium = {
-    enable = true;
-    extensions = [
-      "ddkjiahejlhfcafbddmgiahcphecmpfh"
-    ];
-  };
 }
