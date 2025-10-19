@@ -29,6 +29,23 @@
     };
   };
 
+  services.yubikey-agent = {
+    enable = true;
+    package = pkgs.yubikey-agent.overrideAttrs (oldAttrs: {
+      patches = (oldAttrs.patches or [ ]) ++ [
+        (pkgs.fetchpatch {
+          name = "pr-155.patch";
+          url = "https://github.com/FiloSottile/yubikey-agent/pull/155.patch";
+          hash = "sha256-tqPydG0NOP/q2VKqv3J6FLHknTYKaJzu6smHeqmdxJA=";
+        })
+      ];
+      vendorHash = "sha256-7yzfLrxt/gttKmt46jeR+5M5E5expt1a7owu86kIRUs=";
+    });
+  };
+
+  programs.gnupg.agent = {
+    enable = true;
+  };
 
   # Shell
   programs.zsh.enable = lib.mkDefault true;
