@@ -65,4 +65,9 @@
 
   # Shell
   programs.zsh.enable = lib.mkDefault true;
+
+  # YubiKey PAM configuration for sudo
+  security.pam.services.sudo = {
+    u2fAuth = true;
+  };
 }
