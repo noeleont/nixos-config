@@ -11,7 +11,6 @@
     ../../modules/system/services.nix
     ../../modules/system/users.nix
     ../../modules/system/locale.nix
-    ../../modules/system/zed.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

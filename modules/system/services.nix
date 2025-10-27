@@ -26,6 +26,9 @@
   services.displayManager.sddm.enable = lib.mkDefault true;
   services.desktopManager.plasma6.enable = lib.mkDefault true;
 
+  # Flatpak
+  services.flatpak.enable = lib.mkDefault true;
+
   # Caps lock rebinding
   hardware.uinput.enable = lib.mkDefault true;
   services.kanata = {
