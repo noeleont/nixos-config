@@ -67,6 +67,7 @@
     group = "users";
     openssh.authorizedKeys.keys = [
       "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNcR+zomXsTtXI67NFPw6OAVyXBKNEWCg6r09mnWF0MVBnDO4Off6aAiNlbO2cnZsZzwerxmLZLO9JBQXLUbeq4="
+      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBFU8q7nak4o2i471/4eQaEfG/70jocvWM/1DPCz2IXrLULIxgIq5Ya0V/16RAGVDibntaFwXo5++af/M1VBsOKM="
     ];
   };
 
