@@ -8,8 +8,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvim-pkg.url = "github:noeleont/nvim.nix";
-
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -18,7 +20,7 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
-      nvim-pkg,
+      nixvim,
       ...
     }:
     let
@@ -32,9 +34,6 @@
           ./modules/steam.nix
           home-manager.nixosModules.home-manager
           {
-            nixpkgs.overlays = [
-              nvim-pkg.overlays.default
-            ];
 
             nixpkgs.hostPlatform = system;
 
@@ -48,6 +47,9 @@
             home-manager.extraSpecialArgs = {
               inherit pkgs-unstable;
             };
+            home-manager.sharedModules = [
+              nixvim.homeModules.nixvim
+            ];
           }
         ];
         specialArgs = { inherit inputs; };

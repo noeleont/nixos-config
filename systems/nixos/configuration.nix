@@ -25,9 +25,6 @@
       allowUnfree = true;
       allowUnfreePredicate = (_: true);
     };
-    overlays = [
-      inputs.nvim-pkg.overlays.default
-    ];
   };
 
   environment.systemPackages = with pkgs; [
@@ -35,7 +32,6 @@
     home-manager
     gnumake
     docker-machine-kvm2
-    nvim-pkg
   ];
 
   boot.kernelModules = [ "kvm" ];

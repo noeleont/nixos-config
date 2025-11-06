@@ -7,8 +7,10 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvim-pkg.url = "github:noeleont/nvim.nix";
-    # personal-config.url = "github:noeleont/nix/25.05";
+    nixvim = {
+      url = "github:nix-community/nixvim/nixos-25.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -17,32 +19,30 @@
       nixpkgs,
       nixpkgs-unstable,
       home-manager,
-      nvim-pkg,
+      nixvim,
       ...
     }:
     let
       system = "aarch64-linux";
-      pkgs = import nixpkgs { inherit system; };
-      pkgs-unstable = import nixpkgs-unstable { inherit system; };
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
     in
     {
       nixosConfigurations.m1x = nixpkgs.lib.nixosSystem {
-        inherit system;
         modules = [
-          {
-            nixpkgs.overlays = [
-              nvim-pkg.overlays.default
-            ];
-          }
           ./configuration.nix
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = false;
+            nixpkgs.hostPlatform = system;
+
+            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.noeleon = import ./home.nix;
             home-manager.extraSpecialArgs = {
               inherit pkgs-unstable;
             };
+            home-manager.sharedModules = [
+              nixvim.homeModules.nixvim
+            ];
           }
         ];
         specialArgs = { inherit inputs; };
