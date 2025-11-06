@@ -5,6 +5,7 @@
     ./firefox.nix
     ./zed
     ./packages.nix
+    ./nvim
   ];
 
   home = {
