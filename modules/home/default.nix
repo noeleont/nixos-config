@@ -24,6 +24,13 @@
   programs = {
     home-manager.enable = true;
 
+    nixvim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      imports = [ ./nvim ];
+    };
+
     zsh = {
       enable = true;
       sessionVariables = {

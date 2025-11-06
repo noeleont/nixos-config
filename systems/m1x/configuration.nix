@@ -40,7 +40,6 @@
     # so git must be installed first
     git
     ghostty
-    nvim-pkg
   ];
 
   # Enable sound.
