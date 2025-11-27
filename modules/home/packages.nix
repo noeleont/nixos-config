@@ -15,6 +15,7 @@ let
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for 'ls'
     fzf # A command-line fuzzy finder
+    jujutsu
 
     # networking tools
     mtr # A network diagnostic tool
@@ -34,6 +35,11 @@ let
     gnutar
     gawk
     zstd
+    age
+    age-plugin-yubikey
+    git-agecrypt
+    sops
+    yazi
     gnupg
     thefuck
 
@@ -80,6 +86,8 @@ let
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    tor-browser
   ];
 
   darwinPackages = with pkgs; [
