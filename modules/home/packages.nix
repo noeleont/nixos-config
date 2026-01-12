@@ -16,6 +16,7 @@ let
     eza # A modern replacement for 'ls'
     fzf # A command-line fuzzy finder
     jujutsu
+    wl-clipboard
 
     # networking tools
     mtr # A network diagnostic tool
@@ -41,7 +42,6 @@ let
     sops
     yazi
     gnupg
-    thefuck
 
     # nix related
     #
@@ -86,8 +86,6 @@ let
     ethtool
     pciutils # lspci
     usbutils # lsusb
-
-    tor-browser
   ];
 
   darwinPackages = with pkgs; [

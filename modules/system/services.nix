@@ -70,6 +70,7 @@
   programs.zsh.enable = lib.mkDefault true;
 
   # YubiKey PAM configuration for sudo
+  # Needs initial pamu2fcfg > ~/.config/Yubico/u2f_keys
   security.pam.services.sudo = {
     u2fAuth = true;
   };

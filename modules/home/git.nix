@@ -3,9 +3,11 @@
 {
   programs.git = {
     enable = true;
-    userName = "Noe Thalheim";
-    userEmail = "noe@thalheim.email";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Noe Thalheim";
+        email = "noe@thalheim.email";
+      };
       core = {
         pager = "delta --line-numbers --dark --side-by-side";
         editor = "vim";

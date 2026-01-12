@@ -39,18 +39,23 @@
   ];
 
   boot.kernelModules = [ "kvm" ];
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   virtualisation.libvirtd = {
     enable = true;
     qemu = {
       package = pkgs.qemu_kvm;
       swtpm.enable = true;
-      ovmf.packages = [ pkgs.OVMFFull.fd ];
     };
   };
   virtualisation.docker.enable = true;
 
   # System-specific user groups for nixos
-  common.user.additionalGroups = [ "libvirtd" "docker" "kvm" "networkmanager" ];
+  common.user.additionalGroups = [
+    "libvirtd"
+    "docker"
+    "kvm"
+    "networkmanager"
+  ];
 
   # System-specific user configuration
   users.users.noeleon = {
