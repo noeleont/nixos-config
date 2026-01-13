@@ -59,20 +59,24 @@
     };
   };
 
-  networking.interfaces.end0 = {
-    name = "end0";
-    useDHCP = true;
-  };
+  networking = {
+    interfaces.end0 = {
+      name = "end0";
+      ipv4.addresses = [
+        {
+          address = "192.168.1.10";
+          prefixLength = 24;
+        }
+      ];
 
-  networking.hostName = "m2x";
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-  networking.wireless.iwd = {
-    enable = true;
-    settings.General.EnableNetworkConfiguration = true;
+    };
+    defaultGateway = {
+      address = "192.168.1.1";
+      interface = "end0";
+    };
+    hostName = "m2x";
+    nameservers = [ "1.1.1.1" ];
   };
-  networking.nameservers = [ "1.1.1.1" ];
 
   # SSH
   services.openssh.enable = true;
