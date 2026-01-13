@@ -21,6 +21,7 @@
     hashedPassword = "$6$RtiHJpMl8PeTWI5F$6cOShTcp//kwtQhmBVy1FynfObVJUPm/ZKEH9Q85a7Zvz8HBN6u4zUCsDtBSuMsrU7wyoc.aweF7yXP3pPiUF/";
     openssh.authorizedKeys.keys = [
       "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM+kU+UfhJ2hZkqBM+7OoiQwecbOjUTObwL3bCwsdwguG/50l9AWXRujEJ/MzupZTEAsVnODLGshACCkgS7HbyQ="
+      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNcR+zomXsTtXI67NFPw6OAVyXBKNEWCg6r09mnWF0MVBnDO4Off6aAiNlbO2cnZsZzwerxmLZLO9JBQXLUbeq4="
     ];
   };
 
