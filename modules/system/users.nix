@@ -1,10 +1,15 @@
-{ config, pkgs, lib, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   options.common.user = {
     additionalGroups = lib.mkOption {
       type = lib.types.listOf lib.types.str;
-      default = [];
+      default = [ ];
       description = "Additional groups for the noeleon user";
     };
   };
@@ -16,7 +21,8 @@
         "wheel"
         "input"
         "uinput"
-      ] ++ config.common.user.additionalGroups;
+      ]
+      ++ config.common.user.additionalGroups;
     };
 
     users.defaultUserShell = pkgs.zsh;
