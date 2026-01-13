@@ -1,7 +1,6 @@
 {
-  config,
   lib,
-  pkgs,
+  config,
   ...
 }:
 
@@ -28,10 +27,44 @@
   hardware.asahi.peripheralFirmwareDirectory = ../../support/firmware;
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = false;
+  boot = {
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = false;
+    };
+    kernelModules = [ "tg3" ];
+    initrd = {
+      kernelModules = [ "tg3" ];
+      systemd = {
+        enable = true;
+        users.root.shell = "/bin/systemd-tty-ask-password-agent";
+      };
 
-  networking.hostName = "m2x"; # Define your hostname.
+      network = {
+        enable = true;
+        ssh = {
+          enable = true;
+          port = 2222;
+          # this includes the ssh keys of all users in the wheel group
+          authorizedKeys =
+            with lib;
+            concatLists (
+              mapAttrsToList (
+                name: user: if elem "wheel" user.extraGroups then user.openssh.authorizedKeys.keys else [ ]
+              ) config.users.users
+            );
+          hostKeys = [ /boot/host_ecdsa_key ];
+        };
+      };
+    };
+  };
+
+  networking.interfaces.end0 = {
+    name = "end0";
+    useDHCP = true;
+  };
+
+  networking.hostName = "m2x";
 
   # Configure network connections interactively with nmcli or nmtui.
   networking.networkmanager.enable = true;
@@ -49,9 +82,8 @@
 
   programs.zsh.enable = true;
 
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
-  system.stateVersion = "25.11"; # Did you read the comment?
+  system.stateVersion = "25.11";
 }
