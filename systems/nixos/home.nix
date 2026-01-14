@@ -5,6 +5,7 @@
   imports = [
     ../../modules/home
     ../../modules/home/virtualization.nix
+    ../../modules/home/kde.nix
   ];
 
   home.username = "noeleon";

@@ -3,6 +3,7 @@
 {
   imports = [
     ../../modules/home
+    ../../modules/home/kde.nix
   ];
 
   home.username = "noeleon";
