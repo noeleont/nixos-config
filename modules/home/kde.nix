@@ -76,11 +76,10 @@
 
     panels = [
       {
-        alignment = "left";
-        height = 30;
-        lengthMode = "fit";
+        floating = false;
+        height = 34;
+        lengthMode = "fill";
         location = "top";
-        opacity = "translucent";
         widgets = [
           {
             name = "org.dhruv8sh.kara";
@@ -97,21 +96,13 @@
               };
             };
           }
-        ];
-      }
-      {
-        alignment = "center";
-        height = 30;
-        lengthMode = "fit";
-        location = "top";
-        opacity = "translucent";
-        widgets = [
+          "org.kde.plasma.panelspacer"
           {
             name = "org.kde.plasma.digitalclock";
             config = {
               Appearance = {
                 autoFontAndSize = false;
-                customDateFormat = "ddd MMM d";
+                customDateFormat = "ddd d";
                 dateDisplayFormat = "BesideTime";
                 dateFormat = "custom";
                 fontSize = 11;
@@ -121,15 +112,7 @@
               };
             };
           }
-        ];
-      }
-      {
-        alignment = "right";
-        height = 30;
-        lengthMode = "fit";
-        location = "top";
-        opacity = "translucent";
-        widgets = [
+          "org.kde.plasma.panelspacer"
           {
             systemTray = {
               icons.scaleToFit = true;
@@ -231,7 +214,45 @@
           };
         };
       }
+      {
+        apply = {
+          desktops = "Desktop_4";
+          desktopsrule = "3";
+          fsplevel = "4";
+          fsplevelrule = "2";
+          minimizerule = "2";
+        };
+        description = "Assign Steam to Desktop 4";
+        match = {
+          window-class = {
+            value = "steam";
+            type = "exact";
+            match-whole = false;
+          };
+          window-types = [ "normal" ];
+        };
+      }
+      {
+        apply = {
+          desktops = "Desktop_5";
+          desktopsrule = "3";
+          fsplevel = "4";
+          fsplevelrule = "2";
+        };
+        description = "Assign Steam Games to Desktop 5";
+        match = {
+          window-class = {
+            value = "steam_app_";
+            type = "substring";
+            match-whole = false;
+          };
+        };
+      }
     ];
+
+    workspace = {
+      colorScheme = "BreezeDark";
+    };
 
     configFile = {
       baloofilerc."Basic Settings"."Indexing-Enabled" = false;
