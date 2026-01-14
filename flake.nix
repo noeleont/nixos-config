@@ -28,6 +28,24 @@
       plasma-manager,
       ...
     }:
+    let
+      defaultModules = hostname: system: [
+        ./hosts/${hostname}
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.noeleon = import ./hosts/${hostname}/home.nix;
+          home-manager.sharedModules = [
+            nixvim.homeModules.nixvim
+          ];
+
+          home-manager.extraSpecialArgs = {
+            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+          };
+        }
+      ];
+    in
     {
       nixosConfigurations = {
         nixos =
@@ -36,23 +54,12 @@
             pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
           in
           nixpkgs.lib.nixosSystem {
-            modules = [
-              ./systems/nixos
-              ./systems/nixos/modules/steam.nix
-              home-manager.nixosModules.home-manager
+            modules = defaultModules "nixos" system ++ [
               {
                 environment.systemPackages = [
                   pkgs-unstable.zed-editor
                 ];
-
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.noeleon = import ./systems/nixos/home.nix;
-                home-manager.extraSpecialArgs = {
-                  inherit pkgs-unstable;
-                };
                 home-manager.sharedModules = [
-                  nixvim.homeModules.nixvim
                   plasma-manager.homeModules.plasma-manager
                 ];
               }
@@ -62,21 +69,11 @@
         m1x =
           let
             system = "aarch64-linux";
-            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
           in
           nixpkgs.lib.nixosSystem {
-            modules = [
-              ./systems/m1x
-              home-manager.nixosModules.home-manager
+            modules = defaultModules "m1x" system ++ [
               {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.noeleon = import ./systems/m1x/home.nix;
-                home-manager.extraSpecialArgs = {
-                  inherit pkgs-unstable;
-                };
                 home-manager.sharedModules = [
-                  nixvim.homeModules.nixvim
                   plasma-manager.homeModules.plasma-manager
                 ];
               }
@@ -86,24 +83,9 @@
         m2x =
           let
             system = "aarch64-linux";
-            pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
           in
           nixpkgs.lib.nixosSystem {
-            modules = [
-              ./systems/m2x
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.noeleon = import ./systems/m2x/home.nix;
-                home-manager.extraSpecialArgs = {
-                  inherit pkgs-unstable;
-                };
-                home-manager.sharedModules = [
-                  nixvim.homeModules.nixvim
-                ];
-              }
-            ];
+            modules = defaultModules "m2x" system;
             specialArgs = { inherit inputs; };
           };
       };

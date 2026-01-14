@@ -1,6 +1,9 @@
+HOSTNAME ?= $(shell hostname)
+FLAKE ?= .#$(HOSTNAME)
+
 .PHONY: system
 system:
-	sudo nixos-rebuild switch --flake ./systems/$$(hostname)
+	sudo nixos-rebuild switch --flake $(FLAKE)
 
 update:
-	nix flake update --flake ./systems/$$(hostname)
+	nix flake update --flake $(FLAKE)
