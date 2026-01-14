@@ -37,7 +37,7 @@
           in
           nixpkgs.lib.nixosSystem {
             modules = [
-              ./systems/nixos/configuration.nix
+              ./systems/nixos
               ./systems/nixos/modules/steam.nix
               home-manager.nixosModules.home-manager
               {
@@ -66,7 +66,7 @@
           in
           nixpkgs.lib.nixosSystem {
             modules = [
-              ./systems/m1x/configuration.nix
+              ./systems/m1x
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
@@ -90,7 +90,7 @@
           in
           nixpkgs.lib.nixosSystem {
             modules = [
-              ./systems/m2x/configuration.nix
+              ./systems/m2x
               home-manager.nixosModules.home-manager
               {
                 home-manager.useGlobalPkgs = true;
