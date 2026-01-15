@@ -2,6 +2,7 @@
 {
   imports = [
     ./git.nix
+    ./jujutsu.nix
     ./firefox.nix
     ./zed
     ./packages.nix
