@@ -1,0 +1,10 @@
+keys:
+  - &admin_yubi age1yubikey1q0rkzv59e0wffhwt2rkfycmw89djy462hzrckzm2fas4ga6tzryuxgehf8u
+  - &host_m2x age12ax2j6dvf03e6klvr2lwz3szdct5ehx37j3sta77c09rh8asuqdscvfktr
+
+creation_rules:
+  - path_regex: secrets/[^/]+\.yaml
+    key_groups:
+      - age:
+        - *host_m2x
+        - *admin_yubi

@@ -16,8 +16,13 @@
     ../../modules/system/locale.nix
   ];
 
+  sops.defaultSopsFile = ../../secrets/common.yaml;
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.secrets.user-password.neededForUsers = true;
+
+  users.mutableUsers = false;
   users.users.noeleon = {
-    hashedPassword = "$6$RtiHJpMl8PeTWI5F$6cOShTcp//kwtQhmBVy1FynfObVJUPm/ZKEH9Q85a7Zvz8HBN6u4zUCsDtBSuMsrU7wyoc.aweF7yXP3pPiUF/";
+    hashedPasswordFile = config.sops.secrets.user-password.path;
     openssh.authorizedKeys.keys = [
       "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM+kU+UfhJ2hZkqBM+7OoiQwecbOjUTObwL3bCwsdwguG/50l9AWXRujEJ/MzupZTEAsVnODLGshACCkgS7HbyQ="
       "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNcR+zomXsTtXI67NFPw6OAVyXBKNEWCg6r09mnWF0MVBnDO4Off6aAiNlbO2cnZsZzwerxmLZLO9JBQXLUbeq4="
