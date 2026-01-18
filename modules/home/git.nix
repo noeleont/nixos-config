@@ -3,6 +3,15 @@
 {
   programs.git = {
     enable = true;
+    ignores = [
+      ".DS_Store"
+      "*.swp"
+      "devenv.nix"
+      "devenv.lock"
+      ".envrc"
+      ".devenv"
+      ".devenv.flake.nix"
+    ];
     settings = {
       user = {
         name = "Noe Thalheim";
