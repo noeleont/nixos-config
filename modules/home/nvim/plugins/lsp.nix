@@ -3,6 +3,13 @@
     enable = true;
 
     servers = {
+      # Rust Language Server
+      rust_analyzer = {
+        enable = true;
+        installCargo = true;
+        installRustc = true;
+      };
+
       # Lua Language Server
       lua_ls = {
         enable = true;
