@@ -17,6 +17,8 @@
     showmatch = true; # Highlight matching parentheses
     termguicolors = true;
     scrolloff = 999;
+    list = true;
+    linebreak = true;
 
     # Search
     incsearch = true;
