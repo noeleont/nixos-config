@@ -16,7 +16,7 @@ let
     eza # A modern replacement for 'ls'
     fzf # A command-line fuzzy finder
     jujutsu
-    wl-clipboard
+    devenv
 
     # networking tools
     mtr # A network diagnostic tool
@@ -54,22 +54,14 @@ let
     glow # markdown previewer in terminal
     dive
     delta
-    ghostty
     gnumake
     zellij
     go
 
     btop # replacement of htop/nmon
-    iotop # io monitoring
     iftop # network monitoring
 
-    # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
 
-    # system tools
-    sysstat
 
     # k8s
     kubectl
@@ -86,6 +78,17 @@ let
     ethtool
     pciutils # lspci
     usbutils # lsusb
+    iotop # io monitoring
+    ghostty
+    wl-clipboard
+
+    # system call monitoring
+    strace # system call monitoring
+    ltrace # library call monitoring
+    lsof # list open files
+
+    # system tools
+    sysstat
   ];
 
   darwinPackages = with pkgs; [

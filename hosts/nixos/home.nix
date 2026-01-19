@@ -16,7 +16,6 @@
     android-studio
     wireshark
     nil
-    devenv
     discord
   ];
 
