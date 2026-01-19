@@ -7,6 +7,7 @@
 {
   imports = [
     ./hardware-configuration.nix
+    ./modules/steam.nix
     ../../modules/system/nix-settings.nix
     ../../modules/system/services.nix
     ../../modules/system/users.nix
