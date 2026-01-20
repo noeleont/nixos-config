@@ -3,7 +3,7 @@
 {
   imports = [
     ../../modules/home
-    ../../modules/home/kde.nix
+    ../../modules/home/ui.nix
   ];
 
   home.username = "noeleon";

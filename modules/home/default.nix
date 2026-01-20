@@ -3,9 +3,6 @@
   imports = [
     ./git.nix
     ./jujutsu.nix
-    ./firefox.nix
-    ./ghostty.nix
-    ./zed
     ./packages.nix
   ];
 
