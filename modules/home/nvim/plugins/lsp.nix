@@ -3,6 +3,8 @@
     enable = true;
 
     servers = {
+      phan.enable = true;
+      phpactor.enable = true;
       # Rust Language Server
       rust_analyzer = {
         enable = true;
