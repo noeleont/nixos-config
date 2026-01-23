@@ -24,7 +24,7 @@
   users.users.noeleon = {
     hashedPasswordFile = config.sops.secrets.user-password.path;
     openssh.authorizedKeys.keys = [
-      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBM+kU+UfhJ2hZkqBM+7OoiQwecbOjUTObwL3bCwsdwguG/50l9AWXRujEJ/MzupZTEAsVnODLGshACCkgS7HbyQ="
+      "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKRXK2tzPbJyZZceneFihtO6GsO41f4CxZ15vnKv9nfAmklRpt9crNVl7H2MmsA5rZWRaNgrkbvFZGdpcP5mups="
       "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNcR+zomXsTtXI67NFPw6OAVyXBKNEWCg6r09mnWF0MVBnDO4Off6aAiNlbO2cnZsZzwerxmLZLO9JBQXLUbeq4="
     ];
   };
