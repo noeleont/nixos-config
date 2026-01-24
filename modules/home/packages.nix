@@ -81,6 +81,7 @@ let
     iotop # io monitoring
     ghostty
     wl-clipboard
+    legcord
 
     # system call monitoring
     strace # system call monitoring
