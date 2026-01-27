@@ -11,6 +11,9 @@ in
         name = user.name;
         email = user.email;
       };
+      ui = {
+        paginate = "never";
+      };
     };
   };
   programs.delta.enableJujutsuIntegration = true;
