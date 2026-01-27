@@ -44,6 +44,7 @@ let
     git-agecrypt
     sops
     gnupg
+    keepassxc
 
     # nix related
     #
