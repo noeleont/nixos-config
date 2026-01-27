@@ -1,10 +1,36 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 
 {
   programs = {
     firefox = {
       enable = true;
       policies = {
+        ExtensionSettings = {
+          "uBlock0@raymondhill.net" = {
+            default_area = "menupanel";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            installation_mode = "force_installed";
+            private_browsing = true;
+          };
+          "search@kagi.com" = {
+            default_area = "menupanel";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/kagi-search-for-firefox/latest.xpi";
+            installation_mode = "force_installed";
+            private_browsing = true;
+          };
+          "keepassxc-browser@keepassxc.org" = {
+            default_area = "menupanel";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi";
+            installation_mode = "force_installed";
+            private_browsing = true;
+          };
+          "addon@darkreader.org" = {
+            default_area = "menupanel";
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/darkreader/latest.xpi";
+            installation_mode = "force_installed";
+            private_browsing = true;
+          };
+        };
         SearchEngines = {
           Add = [
             {
