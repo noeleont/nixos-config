@@ -4,6 +4,7 @@
     ./git.nix
     ./jujutsu.nix
     ./packages.nix
+    ./zk.nix
   ];
 
   home = {
