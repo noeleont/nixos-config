@@ -17,7 +17,6 @@
       ripgrep
       bat
       wget
-      # nvim-pkg
     ];
   };
 

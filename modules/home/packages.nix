@@ -36,11 +36,13 @@ let
     gnutar
     gawk
     zstd
+    yazi
+
+    # security
     age
     age-plugin-yubikey
     git-agecrypt
     sops
-    yazi
     gnupg
 
     # nix related
@@ -60,8 +62,6 @@ let
 
     btop # replacement of htop/nmon
     iftop # network monitoring
-
-
 
     # k8s
     kubectl
