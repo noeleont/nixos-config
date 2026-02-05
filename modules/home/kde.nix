@@ -89,6 +89,8 @@
           number = 5;
           rows = 1;
         };
+
+        effects.desktopSwitching.animation = "off";
       };
 
       overrideConfig = true;
@@ -322,6 +324,8 @@
             DelayFocusInterval = 0;
             FocusPolicy = "FocusFollowsMouse";
           };
+          TabBox.HighlightWindows = false;
+        };
         kxkbrc.Layout = {
           Options = "caps:ctrl_shifted_capslock,compose:rwin";
           ResetOldOptions = true;
