@@ -32,6 +32,16 @@
   };
   networking.nameservers = [ "1.1.1.1" ];
 
+  # TODO: replace with map of headless hosts
+  programs.ssh.extraConfig = ''
+    Host nixos-1
+      ForwardAgent yes
+    Host m2x
+      ForwardAgent yes
+    Host m2ma
+      ForwardAgent yes
+  '';
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
