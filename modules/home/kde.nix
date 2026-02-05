@@ -62,6 +62,18 @@
         };
       };
 
+      input.touchpads = [
+        {
+          enable = true;
+          tapToClick = false;
+          naturalScroll = true;
+          disableWhileTyping = true;
+          vendorId = "05ac";
+          productId = "0281";
+          name = "Apple SPI Trackpad";
+        }
+      ];
+
       krunner.activateWhenTypingOnDesktop = false;
 
       kwin = {
