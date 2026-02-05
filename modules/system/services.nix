@@ -29,15 +29,6 @@
   # Flatpak
   services.flatpak.enable = lib.mkDefault true;
 
-  # Caps lock rebinding
-  hardware.uinput.enable = lib.mkDefault true;
-  services.kanata = {
-    enable = lib.mkDefault true;
-    keyboards = {
-      main.config = ''(defsrc caps) (deflayer base lctl)'';
-    };
-  };
-
   services.yubikey-agent = {
     enable = true;
     package = pkgs.yubikey-agent.overrideAttrs (oldAttrs: {

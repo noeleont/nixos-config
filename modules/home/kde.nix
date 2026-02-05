@@ -310,6 +310,9 @@
             DelayFocusInterval = 0;
             FocusPolicy = "FocusFollowsMouse";
           };
+        kxkbrc.Layout = {
+          Options = "caps:ctrl_shifted_capslock,compose:rwin";
+          ResetOldOptions = true;
         };
         plasmanotifyrc = {
           DoNotDisturb = {
