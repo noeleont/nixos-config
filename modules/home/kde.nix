@@ -171,14 +171,14 @@
         AC = {
           autoSuspend.action = "nothing";
           dimDisplay.enable = false;
-          powerButtonAction = "shutDown";
-          turnOffDisplay.idleTimeout = "never";
+          powerButtonAction = "sleep";
+          turnOffDisplay.idleTimeout = 600;
         };
         battery = {
-          autoSuspend.action = "nothing";
+          autoSuspend.action = "sleep";
           dimDisplay.enable = false;
-          powerButtonAction = "shutDown";
-          turnOffDisplay.idleTimeout = "never";
+          powerButtonAction = "sleep";
+          turnOffDisplay.idleTimeout = 300;
         };
       };
 
