@@ -272,8 +272,11 @@
         }
       ];
 
+      kscreenlocker.appearance.wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/DarkestHour/contents/images/2560x1600.jpg";
+
       workspace = {
         colorScheme = "BreezeDark";
+        wallpaper = "${pkgs.kdePackages.plasma-workspace-wallpapers}/share/wallpapers/DarkestHour/contents/images/2560x1600.jpg";
       };
 
       configFile = {
