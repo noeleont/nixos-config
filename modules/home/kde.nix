@@ -217,6 +217,7 @@
         };
 
         "services/org.kde.dolphin.desktop"."_launch" = "Meta+Shift+F";
+        "services/org.kde.krunner.desktop"."_launch" = "Meta+Space";
       };
 
       window-rules = [
