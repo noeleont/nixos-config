@@ -42,6 +42,9 @@
       ForwardAgent yes
   '';
 
+  virtualisation.docker.enable = true;
+  users.users.noeleon.extraGroups = [ "docker" ];
+
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
 
