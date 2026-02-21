@@ -19,6 +19,20 @@
             private_browsing = true;
           };
         };
+        Bookmarks = [
+          {
+            Title = "templates";
+            Url = "https://mozilla.github.io/policy-templates/";
+            # TODO: make this default
+            Placement = "toolbar";
+          }
+          {
+            Title = "profiles";
+            Url = "about:profiles";
+            # TODO: make this default
+            Placement = "toolbar";
+          }
+        ];
         SearchEngines = {
           Add = [
             {
