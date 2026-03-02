@@ -5,6 +5,15 @@
     firefox = {
       enable = true;
       policies = {
+        SanitizeOnShutdown = {
+          Cache = true;
+          Cookies = true;
+          FormData = true;
+          History = true;
+          Sessions = true;
+          SiteSettings = true;
+          Locked = true;
+        };
         ExtensionSettings = {
           "uBlock0@raymondhill.net" = {
             default_area = "menupanel";
