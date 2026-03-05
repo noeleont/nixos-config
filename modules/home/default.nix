@@ -20,6 +20,19 @@
     ];
   };
 
+  xdg.userDirs = {
+    enable = true;
+    createDirectories = false;
+    desktop = "$HOME";
+    documents = "$HOME";
+    download = "$HOME/Downloads";
+    music = "$HOME";
+    pictures = "$HOME";
+    publicShare = "$HOME";
+    templates = "$HOME";
+    videos = "$HOME";
+  };
+
   programs = {
     home-manager.enable = true;
 
