@@ -29,7 +29,7 @@
     ];
   };
 
-  hardware.asahi.peripheralFirmwareDirectory = ../../support/firmware;
+  hardware.asahi.peripheralFirmwareDirectory = ../../support/firmware/m2x;
 
   # Use the systemd-boot EFI boot loader.
   boot = {
