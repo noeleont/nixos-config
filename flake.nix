@@ -104,6 +104,21 @@
             ];
             specialArgs = { inherit inputs; };
           };
+        m2mx =
+          let
+            system = "aarch64-linux";
+          in
+          nixpkgs.lib.nixosSystem {
+            modules = defaultModules "m2mx" system ++ [
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.sharedModules = [
+                  plasma-manager.homeModules.plasma-manager
+                ];
+              }
+            ];
+            specialArgs = { inherit inputs; };
+          };
         m2x =
           let
             system = "aarch64-linux";

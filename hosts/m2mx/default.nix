@@ -24,9 +24,11 @@
 
   networking.hostName = "m2mx"; # Define your hostname.
 
+  hardware.asahi.peripheralFirmwareDirectory = ../../support/firmware/m2mx;
   virtualisation.docker.enable = true;
-  users.users.noeleon.users.users.noeleon = {
-    hashedPassword = "$6$RtiHJpMl8PeTWI5F$6cOShTcp//kwtQhmBVy1FynfObVJUPm/ZKEH9Q85a7Zvz8HBN6u4zUCsDtBSuMsrU7wyoc.aweF7yXP3pPiUF/";
+  users.mutableUsers = false;
+  users.users.noeleon = {
+    hashedPassword = "$6$lOFEUkA3iPP3RQAg$JoNgxZXO3iyedAlBPGo9zM3EiLRe/LXpLRJN9ogmQySqKxZ3/JmcMkj7MsLm4N7WRE0qomUwIao0EyK.JQEyp/";
     extraGroups = [ "docker" ];
   };
 
