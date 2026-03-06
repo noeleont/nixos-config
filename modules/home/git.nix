@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   programs.git = {
@@ -6,9 +6,6 @@
     ignores = [
       ".DS_Store"
       "*.swp"
-      "devenv.nix"
-      "devenv.lock"
-      ".envrc"
       ".devenv"
       ".devenv.flake.nix"
     ];
